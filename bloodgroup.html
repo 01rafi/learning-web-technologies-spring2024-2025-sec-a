@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dropdown Validation</title>
+    <script>
+        function checkDropdown() {
+            if (document.getElementById("dropdown").value == "") {
+                alert("Please select an option.");
+                return false;
+            }
+            window.location.href = "profilepic.html";
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return checkDropdown()"> Blood Group:
+        <select id="dropdown">
+            <option value="">--Select--</option>
+            <option value="1">A+</option>
+            <option value="2">A-</option>
+            <option value="2">B+</option>
+            <option value="2">AB+</option>
+            <option value="2">AB-</option>
+            <option value="2">O+</option>
+            <option value="2">O-</option>
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

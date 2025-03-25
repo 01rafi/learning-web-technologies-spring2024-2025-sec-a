@@ -8,12 +8,13 @@
                 alert("Enter a valid name with at least two words.");
                 return false;
             }
-            return true;
+            window.location.href = "Email.html";
+            return false;
         }
     </script>
 </head>
 <body>
-    <form onsubmit="return checkName()">
+    <form onsubmit="return checkName()"> Name:
         <input type="text" id="name" placeholder="Enter your name"><br>
         <button type="submit">Submit</button>
     </form>

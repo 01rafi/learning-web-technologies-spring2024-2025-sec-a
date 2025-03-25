@@ -8,12 +8,13 @@
                 alert("Select at least one option.");
                 return false;
             }
-            return true;
+            window.location.href = "dateofbirth.html";
+            return false;
         }
     </script>
 </head>
 <body>
-    <form onsubmit="return checkBox()">
+    <form onsubmit="return checkBox()"> Gender:
         <input type="checkbox" id="box1"> male
         <input type="checkbox" id="box2"> female
         <input type="checkbox" id="box3"> other<br>

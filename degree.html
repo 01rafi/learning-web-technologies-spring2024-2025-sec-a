@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Radio Validation</title>
+    <script>
+        function checkRadio() {
+            if (!document.getElementById("SSC").checked && !document.getElementById("HSC").checked && !document.getElementById("BSC").checked) {
+                alert("Select one option.");
+                return false;
+            }
+            window.location.href = "bloodgroup.html";
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return checkRadio()"> Degree:
+        <input type="radio" name="choice" id="SSC"> SSC
+        <input type="radio" name="choice" id="HSC"> HSC
+        <input type="radio" name="choice" id="BSC">BSC <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

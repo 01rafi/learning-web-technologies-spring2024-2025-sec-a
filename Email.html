@@ -9,12 +9,13 @@
                 alert("Enter a valid email.");
                 return false;
             }
-            return true;
+            window.location.href = "gender.html";
+            return false;
         }
     </script>
 </head>
 <body>
-    <form onsubmit="return checkEmail()">
+    <form onsubmit="return checkEmail()"> Email:
         <input type="text" id="email" placeholder="Enter your email"><br>
         <button type="submit">Submit</button>
     </form>

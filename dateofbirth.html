@@ -9,12 +9,13 @@
                 alert("Enter a valid date (dd-mm-yyyy).");
                 return false;
             }
-            return true;
+            window.location.href = "degree.html";
+            return false;
         }
     </script>
 </head>
 <body>
-    <form onsubmit="return checkDate()">
+    <form onsubmit="return checkDate()"> Date of Birth:
         <input type="text" id="date" placeholder="DD-MM-YYYY"><br>
         <button type="submit">Submit</button>
     </form>

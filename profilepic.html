@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UserID & Picture Validation</title>
+    <script>
+        function checkUserId() {
+            var userId = document.getElementById("userId").value;
+            var picture = document.getElementById("picture").value;
+            if (userId <= 0 || picture == "") {
+                alert("Enter a valid User ID and upload a picture.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return checkUserId()">profile picture:
+        <br><br>
+        user id<input type="number" id="userId" placeholder="Enter User ID"><br>
+        picture<input type="file" id="picture"><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
