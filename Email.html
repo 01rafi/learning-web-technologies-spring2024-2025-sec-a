@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Validation</title>
+    <script>
+        function checkEmail() {
+            var email = document.getElementById("email").value;
+            if (!email.includes("@") || !email.includes(".")) {
+                alert("Enter a valid email.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return checkEmail()">
+        <input type="text" id="email" placeholder="Enter your email"><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Date Validation</title>
+    <script>
+        function checkDate() {
+            var date = document.getElementById("date").value;
+            if (date == "" || date.length != 10) {
+                alert("Enter a valid date (dd-mm-yyyy).");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return checkDate()">
+        <input type="text" id="date" placeholder="DD-MM-YYYY"><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
