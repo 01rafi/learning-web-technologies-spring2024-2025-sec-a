@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Simple Rating System</title>
+</head>
+<body>
+
+    <h1>Recipe Rating System</h1>
+
+    <form onsubmit="return checkRating()">
+        <p>Select your rating:</p>
+        <input type="radio" name="stars" value="1"> ★☆☆☆☆<br>
+        <input type="radio" name="stars" value="2"> ★★☆☆☆<br>
+        <input type="radio" name="stars" value="3">  ★★★☆☆<br>
+        <input type="radio" name="stars" value="4"> ★★★★☆<br>
+        <input type="radio" name="stars" value="5">  ★★★★★<br>
+        <p id="RE" style="color: red;"></p>
+        <input type="submit" value="Submit Rating">
+    </form>
+
+    <br><br>
+
+    <form onsubmit="return checkReview()">
+        <p>Your Name:</p>
+        <input type="text" id="name"><br>
+        <p id="NE" style="color: red;"></p>
+
+        <p>Your Review:</p>
+        <textarea id="review" rows="4" cols="40"></textarea><br>
+        <p id="REE" style="color: red;"></p>
+
+        <input type="submit" value="Submit Review">
+    </form>
+
+    <form>
+        <table>
+            <tr>
+                <td>
+                    <h2>Top Reviews:</h2>
+                </td>
+            <tr>
+                <td>
+                    1.Chocolate Cake -----  ★★★★☆<br>
+                    2.Vanilla Ice Cream -----  ★★★★★<br>
+                    3.Strawberry Pie -----  ★★★☆☆<br>
+                </td>
+            </tr>
+        </table>
+
+
+    </form>
+
+    <script>
+        function checkRating() {
+            let ratings = document.getElementsByName("stars");
+            let selected = false;
+
+            for (let i = 0; i < 5; i++) {
+                if (ratings[i].checked) {
+                    selected = true;
+                    break;
+                }
+            }
+
+            if (!selected) {
+                document.getElementById("RE").innerText = "Please select a rating!";
+                return false;
+            } else {
+                document.getElementById("RE").innerText = "";
+                return true;
+            }
+        }
+
+        function checkReview() {
+            let name = document.getElementById("name").value;
+            let review = document.getElementById("review").value;
+
+            let valid = true;
+
+            if (name === "") {
+                document.getElementById("NE").innerText = "Name is required!";
+                valid = false;
+            } else {
+                document.getElementById("NE").innerText = "";
+            }
+
+            if (review === "") {
+                document.getElementById("REE").innerText = "Review cannot be empty!";
+                valid = false;
+            } else {
+                document.getElementById("REE").innerText = "";
+            }
+
+            return valid;
+        }
+    </script>
+
+</body>
+</html>
